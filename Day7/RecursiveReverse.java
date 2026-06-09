@@ -1,0 +1,26 @@
+//Program for Recursive Reverse number
+
+import java.util.Scanner;
+
+public class RecursiveReverse {
+
+    static int reverse(int n, int rev) 
+    {
+        if (n == 0)
+            return rev;
+
+        return reverse(n / 10, rev * 10 + n % 10);
+    }
+
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");                   //Input the number
+        int num = sc.nextInt();
+
+        int reversed = reverse(num, 0);
+
+        System.out.println("Reversed number = " + reversed);
+    }
+}
